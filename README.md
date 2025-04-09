@@ -1,6 +1,5 @@
 # javaScript-notes
 
-#  javaScript-notes
 
 Reference Types : Objects , Arrays , functions > but both Arrays and functions are objects in itself so only reference type is Objects
 
@@ -30,7 +29,8 @@ both size and type are dynamic
 
 const array = ['hello',1,'hye'] 
 
-## hoisting :  accessing value before initializing them. Declaration is called to the top.
+## hoisting :  accessing value before initializing them. Declaration is called to the top. let,var,const are all hoisted but only var is assigned undefined and other two is assigned nothing.
+## Temporal Dead Zone : let,const values are hoisted but they are not accessible.they are in temporal dead zone which why accessing it gives reference error.
 
 ## Execution context : environment constituting var, functions scope etc.
 
@@ -57,6 +57,32 @@ Example :
   console.log(a); // 10
   console.log(this.a); // 10 > this here referes to the global object a
   console.log(window.a); // 10 > window also referes to the global object a.
+  * if console.log(window); // window object will be shown on the console which will contain variable a = 10.
+  * if (window === this ) // will return true.
+
+## let ,const , var
+
+ var is created in global scope.
+ let, const is created in scripts which is a different space. 
+  example : declare var a = .. , lt , const .. in chrome snippet
+            ctrl + enter > in scope in global a will be present but in scripts  let and const variables will be present.
+
+            
+## lexical scope : 
+
+ function printmsg(){
+ console.log(x); first x will be searched in local/lexical scope ,if not found then it will be searched in global scope.
+ }
+
+ let x = 5;
+ printmsg();
+ 
+            
+  
+
+    
+    
+  
        
 
  
