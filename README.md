@@ -32,7 +32,7 @@ const array = ['hello',1,'hye']
 ## hoisting :  accessing value before initializing them. Declaration is called to the top. let,var,const are all hoisted but only var is assigned undefined and other two is assigned nothing.
 ## Temporal Dead Zone : let,const values are hoisted but they are not accessible.they are in temporal dead zone which why accessing it gives reference error.
    *  With let (and const), hoisting still happens, but the variable is in a "temporal dead zone" from the start of the block until the declaration is encountered.
-
+   * in other words bcus var is initialized with undefined v
 ## Execution context : environment constituting var, functions scope etc.
 
 Initially global execution context is created > and everytime a function is called a new execution context is created and added to the call stack.
@@ -112,6 +112,16 @@ let sum =  function (a,b){
   console.log(operate(a,5,6));
   console.log(operate(b,7,8));
 
+
+ ## closures : function with its lexical scope(which has reference to outer variables) is called closure
+     using too much closure results in memory leaks.
+
+
+ ## Async Js 
+
+ * Callbacks : 
+
+     
  
  
             
