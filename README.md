@@ -31,6 +31,7 @@ const array = ['hello',1,'hye']
 
 ## hoisting :  accessing value before initializing them. Declaration is called to the top. let,var,const are all hoisted but only var is assigned undefined and other two is assigned nothing.
 ## Temporal Dead Zone : let,const values are hoisted but they are not accessible.they are in temporal dead zone which why accessing it gives reference error.
+   *  With let (and const), hoisting still happens, but the variable is in a "temporal dead zone" from the start of the block until the declaration is encountered.
 
 ## Execution context : environment constituting var, functions scope etc.
 
@@ -68,14 +69,50 @@ Example :
             ctrl + enter > in scope in global a will be present but in scripts  let and const variables will be present.
 
             
-## lexical scope : 
+## lexical scope :  
 
  function printmsg(){
- console.log(x); first x will be searched in local/lexical scope ,if not found then it will be searched in global scope.
+ console.log(x);  // first x will be searched in local/lexical scope ,if not found then it will be searched in global scope.
  }
 
  let x = 5;
  printmsg();
+
+ ## function / aka First class citizens > can assigned to other variables , different data structures and passed or returned from another function.
+
+1>
+
+function sum (a,b){
+ return a + b;  // this function here in its local , not only has values of a and b but has " this : window " , which is a reference to global scope.
+  } 
+
+ console.log(sum); // prints the entire function body as is on the console
+ console.log(sum(5,6)); // prints the sum of the function
+
+2>
+
+let sum =  function (a,b){
+ return a + b;
+ } 
+
+ console.log(sum); // prints the entire function body as is on the console
+ console.log(sum(5,6)); // prints the sum of the function
+
+ 3> passing function as a parametre
+
+  let a = function (x,y)
+  {
+  return x+y;
+  }
+
+  let b = function (x,y) { return x - y; }
+
+  function operate (operations, x,y){ return operations(x,y); } // function passed as a parametre. 
+
+  console.log(operate(a,5,6));
+  console.log(operate(b,7,8));
+
+ 
  
             
   
