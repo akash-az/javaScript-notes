@@ -121,7 +121,16 @@ let sum =  function (a,b){
 
  * Callbacks : 
 
-     
+
+## fetch :
+
+response = fetch(" api ");
+
+Now 2 things happen : 1 >  memory is created for data , and two arrays onFulfilled, onRejection are made which are inaccessible to users. 
+
+2> this part handles the browser/node request. A network request is fired and this request requires resources which is provided by either browser/node. On succession/failure of network response,respective function is executed either in onFullfilled  or onRejection based on promise fullfillment.And then these function resolves data variable which is stored in the the response.
+
+ 
  
  
             
